@@ -1,4 +1,3 @@
-#from secret import MAIL_SENDER, MAIL_PASS, MAIL_RECIPIENT, SIZE
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from bs4 import BeautifulSoup
@@ -6,9 +5,12 @@ import pandas as pd
 import requests
 import smtplib
 import json
+import os
 
 
 def check_page():
+    SIZE = os.getenv("SIZE")
+    
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
     }
@@ -46,9 +48,9 @@ def check_page():
 
 def send_mail(result):
 
-    sender = MAIL_SENDER
-    passw = MAIL_PASS
-    recipient = MAIL_RECIPIENT
+    sender = os.getenv("MAIL_SENDER")
+    passw = os.getenv("MAIL_PASS")
+    recipient = os.getenv("MAIL_RECIPIENT")
 
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -112,3 +114,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
