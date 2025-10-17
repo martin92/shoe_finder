@@ -24,3 +24,8 @@ jobs:
 
       - name: Ejecutar script
         run: python main.py
+        env:
+        MAIL_SENDER: ${{ secret.MAIL_SENDER }}
+        MAIL_PASS: ${{ secret.MAIL_PASS }}
+        MAIL_RECIPIENT: $ {{ secret.MAIL_RECIPIENT }}
+        SIZE: ${{ secret.SIZE }}
