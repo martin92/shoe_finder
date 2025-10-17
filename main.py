@@ -1,4 +1,4 @@
-from secret import MAIL_SENDER, MAIL_PASS, MAIL_RECIPIENT, SIZE
+#from secret import MAIL_SENDER, MAIL_PASS, MAIL_RECIPIENT, SIZE
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from bs4 import BeautifulSoup
