@@ -27,5 +27,5 @@ jobs:
         env:
           MAIL_SENDER: ${{ secrets.MAIL_SENDER }}
           MAIL_PASS: ${{ secrets.MAIL_PASS }}
-          MAIL_RECIPIENT: $ {{ secrets.MAIL_RECIPIENT }}
+          MAIL_RECIPIENT: ${{ secrets.MAIL_RECIPIENT }}
           SIZE: ${{ secrets.SIZE }}
