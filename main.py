@@ -24,7 +24,7 @@ def check_page():
     items = []
 
     for productos in loaded_json:
-        if productos['color'] in ('278', '007'):
+        if productos['color'] in ('278', '007') and productos['offers']['availability'] == 'https://schema.org/InStock':
             items.append(
                 [
                     productos['sku'],
@@ -114,4 +114,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
